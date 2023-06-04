@@ -1,0 +1,83 @@
+main {
+    height: fit-content;
+}
+
+.userPfp {
+    height: 80px;
+    border-radius: 50%;
+    overflow: hidden;  
+}
+.userPfp img {
+    height: 80px;
+    width: 80px;
+}
+
+.userPfp.Big {
+    height: 200px;
+    width: fit-content;
+}
+.userPfp.Big img{
+    height: 200px;
+    width: 200px;
+}
+
+.top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 30px;
+    padding-left: 30px;
+    padding-right: 30px;
+}
+.top .left{
+    display: flex;
+    align-items: center;
+
+
+}
+.top .left h1 { margin-left: 30px; font-size: 60px;}
+
+.top button {
+    background: var(--Log_Out);
+    border: none;
+    color: var(--Texto);
+
+    width: 100px;
+    font-size: 20px;
+    font-weight: 500;
+    height: 40px;
+    border: none;
+    border-radius: 5px;
+    transition: .5s;
+    cursor: pointer;
+}
+.top button:hover {
+    background: var(--Log_Out_hover);
+}
+
+.top .left #Edit {
+    margin-left: 20px;
+    cursor: pointer;
+}
+.top .left #Edit svg {
+    transition: .5s;
+}
+.top .left #Edit:hover svg{
+    color: var(--Log_Out);
+}
+
+.opcoes_fav {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+}
+.opcoes_fav h2 {
+    transition: .5s;
+    cursor: pointer;
+}
+.opcoes_fav h2:hover{
+    color: var(--Sec);
+}
+.opcoes_fav h2.Atual {
+    color: var(--Pri);
+}

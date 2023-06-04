@@ -1,0 +1,23 @@
+nav {
+
+}
+
+nav ul {
+    width: 500px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--Textos);
+    font-size: 20px;
+    transition: .5s;
+}
+nav ul li a.atual {
+    color: var(--Pri);
+}
+nav ul li a:hover {
+    color: var(--Sec);
+}
