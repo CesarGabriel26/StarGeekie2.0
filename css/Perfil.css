@@ -5,11 +5,20 @@ main {
     display: flex;
     align-items: center;
 }
-.right .PesquisarIcon {
+
+.right .Icon svg,
+.right .Icon {
+    display: block;
     width: 30px;
     color: var(--Textos);
     margin-right: 20px;
     cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.right .Icon svg:hover,
+.right .Icon:hover {
+    color: var(--Sec);
 }
 
 .userPfp {

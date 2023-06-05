@@ -1,0 +1,152 @@
+<!DOCTYPE html5>
+<html lang='pt-BR'>
+
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Star Geekie - Registrar midia</title>
+
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/Perfil.css">
+    <link rel="stylesheet" href="../css/header-nav.css">
+    <link rel="stylesheet" href="../css/RegisterMidia.css">
+
+    <link rel="shortcut icon" href="../svg/Star geekie.svg">
+
+</head>
+
+<body>
+
+    <header>
+        <img src="../svg/Star geekie icon.svg" alt="Logo Star geekie" class="Logo">
+
+        <nav>
+            <ul>
+                <ul>
+                    <li><a href="Conteudo.html" onclick="GotoConteudo('Filmes')"
+                            data-Storager="Filmes">Filmes</a></li>
+                    <li><a href="Conteudo.html" onclick="GotoConteudo('Series')"
+                            data-Storager="Series">Series</a></li>
+                    <li><a href="Conteudo.html" onclick="GotoConteudo('Animes')"
+                            data-Storager="Jogos">Animes</a></li>
+                    <li><a  href="Conteudo.html" onclick="GotoConteudo('Mangas')"
+                            data-Storager="Mangas">Mangas</a></li>
+                </ul>
+            </ul>
+        </nav>
+
+        <div class="right">
+            <a href="#Pesquisa.html" class="Icon" title="Pesquisar">
+                <svg viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M551.13 526.776L364.345 339.991c30.506-36.023 49.003-82.523 49.003-133.317C413.348 92.707 320.64 0 206.674 0S0 92.707 0 206.674s92.707 206.674 206.674 206.674c50.794 0 97.294-18.497 133.317-49.003L526.776 551.13l24.354-24.354zM206.674 378.902c-94.961 0-172.228-77.267-172.228-172.228S111.713 34.446 206.674 34.446s172.228 77.267 172.228 172.228-77.267 172.228-172.228 172.228z"
+                        fill="currentColor"></path>
+                </svg>
+            </a>
+
+            <a href="#Registrar.html" title="Registrar Midia" class="Icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" >
+                    <path
+                        d="M226-160q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47l-66 66Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm-40 508v-65l243-243 65 65-243 243h-65Zm294-508q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm40 239-65-65 25-25q8-8 20-8.5t20 7.5l26 26q8 8 7.5 20t-8.5 20l-25 25Z" 
+                        fill="currentColor"
+                    ></path>
+                </svg>
+            </a>
+
+            <a class="userPfp" href="perfil.html">
+                <div class="userPfp">
+                    <img src="" id="UserPicture">
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="CardContainer" id="CardContainer">
+            
+            <div title="Asistir: ${Nome}" class="Poster" href="#">
+                <img src="${Link}" class="img" width="170" height="270" alt="Poster ${Nome}" loading="lazy"
+                    decoding="async">
+                <div class="grad"></div>
+                <div class="infos">
+                    <p>${Nome}</p>
+                    <div class="b">
+                        <div class="y">${Ano}</div>
+                        <div class="r">${Pontuação}</div>
+                        <div class="t">${duracaoH}h, ${duracaoM}min</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <form id="Form" class="RegisterContainer">
+
+            <div class="input">
+                <label for="Nome">Nome</label>
+                <input required type="text" id="Nome">
+            </div>
+            <div class="input">
+                <label for="Link">Link</label>
+                <input required type="text" id="Link">
+            </div>
+
+            <hr style="background: transparent;" class="Separador">
+            <h4>Tipo</h4>
+
+            <div class="input radio">
+                <div class="Subinput">
+                    <input type="radio" checked name="Tipo" value="Filmes" id="Tipo"> 
+                    <p>Filme</p>
+                </div>
+                <div class="Subinput">
+                    <input type="radio" name="Tipo" value="Series" id="Tipo"> 
+                    <p>Serie</p>
+                </div>
+                <div class="Subinput">
+                    <input type="radio" name="Tipo" value="Mangas" id="Tipo"> 
+                    <p>Manga</p>
+                </div>
+                <div class="Subinput">
+                    <input type="radio" name="Tipo" value="Animes" id="Tipo"> 
+                    <p>Animes</p>
+                </div>
+            </div>
+
+            <hr style="background: transparent;" class="Separador">
+            <h4>Opcional</h4>
+
+            <div class="input">
+                <label for="Ano">Ano</label>
+                <input value="0" maxlength="4" type="text" id="Ano">
+            </div>
+            <div class="input">
+                <label for="Pontuação">Pontuação</label>
+                <input type="number" value="0" max="5" id="Pontuação">
+            </div>
+            <div class="input">
+                <label for="duracaoH">duracaoH</label>
+                <input type="number" value="0" max="24" id="duracaoH">
+            </div>
+            <div class="input">
+                <label for="duracaoM">duracaoM</label>
+                <input type="number" value="0" max="60" id="duracaoM">
+            </div>
+            <div class="input">
+                <button id="Registrar" type="button">Registrar</button>
+                <button id="Cancelar" type="button">Cancelar</button>
+            </div>
+        </form>
+
+    </main>
+
+    <script src="../js/perfil.js"></script>
+    <script src="../js/RegisterMidia.js"></script>
+
+</body>
+
+</html>

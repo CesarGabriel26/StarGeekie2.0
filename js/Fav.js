@@ -11,17 +11,7 @@ Opcoes.forEach(opcao => {
     })
 });
 /**/
-var Conteudo = {
-    Nome : "Titanic 1997",
-    Link : "https://cinemaparasempre.com.br/wp-content/uploads/2017/02/hBTPwTkwmdi3rX2qV3IpkTqu11i.jpg",
-    Ano : 1998,
-    Pontuação : 6.5,
-    duracaoH : 3,
-    duracaoM : 14
-}
-var array = []
-array.push(Conteudo)
-localStorage.setItem('moviesLikes',JSON.stringify(array))/**/
+
 LoadList('moviesLikes')
 
 function LoadList(Data){
