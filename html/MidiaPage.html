@@ -1,0 +1,95 @@
+<!DOCTYPE html5>
+<html lang='pt-BR'>
+
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Star Geekie - Midia</title>
+
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/Perfil.css">
+    <link rel="stylesheet" href="../css/header-nav.css">
+    <link rel="stylesheet" href="../css/MidiaPage.css">
+
+    <link rel="shortcut icon" href="../svg/Star geekie.svg">
+
+</head>
+
+<body class="image">
+
+    <header>
+        <img src="../svg/Star geekie icon.svg" alt="Logo Star geekie" class="Logo">
+
+        <nav>
+            <ul>
+                <li><a href="Conteudo.html" onclick="GotoConteudo('Filmes')" data-Storager="Filmes">Filmes</a></li>
+                <li><a href="Conteudo.html" onclick="GotoConteudo('Series')" data-Storager="Series">Series</a></li>
+                <li><a href="Conteudo.html" onclick="GotoConteudo('Jogos')" data-Storager="Jogos">Jogos</a></li>
+                <li><a href="Conteudo.html" onclick="GotoConteudo('Mangas')" data-Storager="Mangas">Mangas</a></li>
+            </ul>
+        </nav>
+
+        <div class="right">
+            <a href="#Pesquisa.html" class="Icon" title="Pesquisar">
+                <svg viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg"><path d="M551.13 526.776L364.345 339.991c30.506-36.023 49.003-82.523 49.003-133.317C413.348 92.707 320.64 0 206.674 0S0 92.707 0 206.674s92.707 206.674 206.674 206.674c50.794 0 97.294-18.497 133.317-49.003L526.776 551.13l24.354-24.354zM206.674 378.902c-94.961 0-172.228-77.267-172.228-172.228S111.713 34.446 206.674 34.446s172.228 77.267 172.228 172.228-77.267 172.228-172.228 172.228z" fill="currentColor"></path></svg>
+            </a>
+            <a href="Registrar.html" title="Registrar Midia" class="Icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" >
+                    <path
+                        d="M226-160q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47l-66 66Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm-40 508v-65l243-243 65 65-243 243h-65Zm294-508q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm40 239-65-65 25-25q8-8 20-8.5t20 7.5l26 26q8 8 7.5 20t-8.5 20l-25 25Z" 
+                        fill="currentColor"
+                    ></path>
+                </svg>
+            </a>
+            <a class="userPfp" href="perfil.html">
+                <div class="userPfp">
+                    <img src="" id="UserPicture">
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="container">
+            <div class="left">
+                <img id="img" src="${item.Link}" width="330" height="470" alt="Poster ${item.Nome}" loading="lazy"decoding="async">
+                <div class="grad"></div>
+            </div>
+            <div class="right_" id="right">
+
+                <div id="top">
+                    <p>ASSISTIR ${Nome} ONLINE</p>
+                    <h2>${Nome}</h2>
+
+                    <div class="infos">
+                        <div class="y">${item.Ano}</div>
+                        <div class="r">${item.Pontuação}</div>
+                        <div class="t">${item.duracaoH}h, ${item.duracaoM}min</div>
+                    </div>
+                </div>
+                <div id="bottom">
+                    <p id="descricao">Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit expedita delectus consequuntur labore illo necessitatibus, magni deserunt maxime exercitationem! Quidem dolorum minus rerum est, odio dolore repudiandae tempore vitae odit?</p>
+                
+                    <div class="buttons">
+                        <button onclick="AddCurtido()">Curtir</button>
+                        <button>Ver depois</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </main>
+
+
+    <script src="../js/perfil.js"></script>
+    <script src="../js/MidiaPage.js"></script>
+    <script src="../js/Fav.js"></script>
+
+</body>
+
+</html>

@@ -10,12 +10,12 @@ Opcoes.forEach(opcao => {
         LoadList(opcao.getAttribute("data-load-list"))
     })
 });
-/**/
+
 
 LoadList('moviesLikes')
 
 function LoadList(Data){
-    let container = document.getElementById('postersList')
+    let container = document.getElementById('Container_All')
 
     var Reset = `
         <div class="notYet" style="color: white;">
@@ -42,7 +42,7 @@ function LoadList(Data){
         list.forEach(item =>{
 
             var html = `
-                <a title="Asistir: ${item.Nome}" class="Poster" href="#">
+                <a onclick="GoToMidia('${item.Nome}')" title="Asistir: ${item.Nome}" class="Poster" id="Poster" href="#">
                     <img src="${item.Link}" class="img" width="170" height="270" alt="Poster ${item.Nome}" loading="lazy"
                         decoding="async">
                     <div class="grad"></div>
@@ -63,4 +63,9 @@ function LoadList(Data){
     }
 
 
+}
+
+function GoToMidia(name){
+    localStorage.setItem('filmeClicado',name)
+    window.location.href = "MidiaPage.html"
 }

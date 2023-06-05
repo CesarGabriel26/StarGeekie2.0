@@ -27,13 +27,13 @@
         <nav>
             <ul>
                 <ul>
-                    <li><a href="Conteudo.html" onclick="GotoConteudo('Filmes')"
+                    <li><a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Filmes')"
                             data-Storager="Filmes">Filmes</a></li>
-                    <li><a href="Conteudo.html" onclick="GotoConteudo('Series')"
+                    <li><a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Series')"
                             data-Storager="Series">Series</a></li>
-                    <li><a href="Conteudo.html" onclick="GotoConteudo('Animes')"
-                            data-Storager="Jogos">Animes</a></li>
-                    <li><a href="Conteudo.html" onclick="GotoConteudo('Mangas')"
+                    <li><a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Animes')"
+                            data-Storager="Animes">Animes</a></li>
+                    <li><a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Mangas')"
                             data-Storager="Mangas">Mangas</a></li>
                 </ul>
             </ul>
@@ -69,7 +69,7 @@
 
         <div class="Recenter">
             <p id="TituloRecente">Assistir Filmes Online - Recomendados</p>
-            <div id="container_recente">
+            <div id="container_recomendados">
             </div>
         </div>
 
@@ -78,7 +78,7 @@
             <div class="pesquisa_">
                 <div class="input">
                     <label for="Pesquisa_1">Pesquise</label>
-                    <input placeholder="Pesquise por um titulo" type="text" name="" id="Pesquisa_1">
+                    <input placeholder="Pesquise por um titulo" type="text" name="" id="Pesquisa_INP">
                 </div>
             </div>
 
@@ -90,6 +90,7 @@
 
     <script src="../js/perfil.js"></script>
     <script src="../js/Conteudo.js"></script>
+    <script src="../js/Pesquisa.js"></script>
 
 </body>
 
