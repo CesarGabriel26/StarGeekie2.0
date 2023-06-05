@@ -18,24 +18,28 @@
 
 </head>
 
-<body>
+<body class="image">
 
     <header>
         <img src="../svg/Star geekie icon.svg" alt="Logo Star geekie" class="Logo">
 
         <nav>
             <ul>
-                <li><a href="">Filmes</a></li>
-                <li><a href="">Series</a></li>
-                <li><a href="">Jogos</a></li>
-                <li><a href="">Mangas</a></li>
+                <li><a href="Conteudo.html" onclick="GotoConteudo('Filmes')" data-Storager="Filmes">Filmes</a></li>
+                <li><a href="Conteudo.html" onclick="GotoConteudo('Series')" data-Storager="Series">Series</a></li>
+                <li><a href="Conteudo.html" onclick="GotoConteudo('Jogos')" data-Storager="Jogos">Jogos</a></li>
+                <li><a href="Conteudo.html" onclick="GotoConteudo('Mangas')" data-Storager="Mangas">Mangas</a></li>
             </ul>
         </nav>
 
-        <div class="userPfp">
-            <img src="" id="UserPicture">
+        <div class="right">
+            <a title="Pesquisar">
+                <svg viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg"><path d="M551.13 526.776L364.345 339.991c30.506-36.023 49.003-82.523 49.003-133.317C413.348 92.707 320.64 0 206.674 0S0 92.707 0 206.674s92.707 206.674 206.674 206.674c50.794 0 97.294-18.497 133.317-49.003L526.776 551.13l24.354-24.354zM206.674 378.902c-94.961 0-172.228-77.267-172.228-172.228S111.713 34.446 206.674 34.446s172.228 77.267 172.228 172.228-77.267 172.228-172.228 172.228z" fill="currentColor"></path></svg>
+            </a>
+            <div class="userPfp">
+                <img src="" id="UserPicture">
+            </div>
         </div>
-
     </header>
 
     <main>
@@ -71,7 +75,7 @@
                     <p>Pesquise por filmes,series, <br> mangas ou animes em suas listas</p>
                     <div class="input">
                         <input type="text" placeholder="Pesquisar...." id="">
-                        <button id="Pesquisar">P</button>
+                        <button id="Pesquisar"><svg viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg"><path d="M551.13 526.776L364.345 339.991c30.506-36.023 49.003-82.523 49.003-133.317C413.348 92.707 320.64 0 206.674 0S0 92.707 0 206.674s92.707 206.674 206.674 206.674c50.794 0 97.294-18.497 133.317-49.003L526.776 551.13l24.354-24.354zM206.674 378.902c-94.961 0-172.228-77.267-172.228-172.228S111.713 34.446 206.674 34.446s172.228 77.267 172.228 172.228-77.267 172.228-172.228 172.228z" fill="currentColor"></path></svg></button>
                     </div>
                 </div>
             </div>

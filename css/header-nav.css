@@ -1,6 +1,3 @@
-nav {
-
-}
 
 nav ul {
     width: 500px;
@@ -14,10 +11,27 @@ nav ul li a {
     color: var(--Textos);
     font-size: 20px;
     transition: .5s;
+    position: relative;
 }
+
+nav ul li a::before {
+    content: "";
+    opacity: 0;
+    width: 100%;
+    height: 1px;
+    background: var(--Sec);
+    position: absolute;
+    bottom: -35;
+    left: 0;
+    transition: all .2s ease-in-out;
+}
+
 nav ul li a.atual {
-    color: var(--Pri);
+    color: var(--orange);
 }
 nav ul li a:hover {
     color: var(--Sec);
+}
+nav ul li a:hover::before {
+    opacity: 1;
 }

@@ -1,8 +1,19 @@
 main {
     height: fit-content;
 }
+.right {
+    display: flex;
+    align-items: center;
+}
+.right .PesquisarIcon {
+    width: 30px;
+    color: var(--Textos);
+    margin-right: 20px;
+    cursor: pointer;
+}
 
 .userPfp {
+    width: 80px;
     height: 80px;
     border-radius: 50%;
     overflow: hidden;  

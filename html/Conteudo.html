@@ -1,0 +1,78 @@
+<!DOCTYPE html5>
+<html lang='pt-BR'>
+
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <title>Star Geekie - Filmes</title>
+
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/Perfil.css">
+    <link rel="stylesheet" href="../css/Containers.css">
+    <link rel="stylesheet" href="../css/header-nav.css">
+    <link rel="stylesheet" href="../css/Conteudo.css">
+
+    <link rel="shortcut icon" href="../svg/Star geekie.svg">
+
+</head>
+
+<body>
+
+    <header>
+        <img src="../svg/Star geekie icon.svg" alt="Logo Star geekie" class="Logo">
+
+        <nav>
+            <ul>
+                <ul>
+                    <li><a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Filmes')" data-Storager="Filmes">Filmes</a></li>
+                    <li><a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Series')" data-Storager="Series">Series</a></li>
+                    <li><a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Jogos')" data-Storager="Jogos">Jogos</a></li>
+                    <li><a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Mangas')" data-Storager="Mangas">Mangas</a></li>
+                </ul>
+            </ul>
+        </nav>
+
+        <div class="right">
+            <a class="PesquisarIcon" title="Pesquisar">
+                <svg viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg"><path d="M551.13 526.776L364.345 339.991c30.506-36.023 49.003-82.523 49.003-133.317C413.348 92.707 320.64 0 206.674 0S0 92.707 0 206.674s92.707 206.674 206.674 206.674c50.794 0 97.294-18.497 133.317-49.003L526.776 551.13l24.354-24.354zM206.674 378.902c-94.961 0-172.228-77.267-172.228-172.228S111.713 34.446 206.674 34.446s172.228 77.267 172.228 172.228-77.267 172.228-172.228 172.228z" fill="currentColor"></path></svg>
+            </a>
+            <a class="userPfp" href="perfil.html">
+                <div class="userPfp">
+                    <img src="" id="UserPicture">
+                </div>
+            </a>
+        </div>
+    </header>
+
+    <main>
+
+        <div class="Recenter">
+            <p id="TituloRecente">Assistir Filmes Online - Recomendados</p>
+            <div id="container_recente">
+            </div>
+        </div>
+
+        <div class="Pesquisar_Conteudo">
+
+            <div class="pesquisa_">
+                <div class="input">
+                    <label for="Pesquisa_1">Pesquise</label>
+                    <input placeholder="Pesquise por um titulo" type="text" name="" id="Pesquisa_1">
+                </div>
+            </div>
+
+            <div id="Container_All"></div>
+
+        </div>
+
+    </main>
+
+    <script src="../js/perfil.js"></script>
+    <script src="../js/Conteudo.js"></script>
+
+</body>
+
+</html>

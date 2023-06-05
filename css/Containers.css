@@ -78,6 +78,7 @@
 
     margin-bottom: 20px;
     margin-left: 10px;
+    margin-top: 20px;
     margin-right: 10px;
     
 }
@@ -167,6 +168,9 @@
     border: none;
     border-top-right-radius: 10px;
     border-bottom-right-radius: 10px;
+}
+.prifileSide .Pesquisa #Pesquisar svg{
+    width: 20px;
 }
 .prifileSide .Pesquisa #Pesquisar:hover{
     background: var(--orange);

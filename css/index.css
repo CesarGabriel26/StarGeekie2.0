@@ -1,7 +1,10 @@
 body {
-    background: var(--Body_Bg), url("../img/Index.header.jpg");
+    background: var(--Body_Bg_normal);
     background-repeat: no-repeat;
-    color: var(--Textos);
+    color: var(--Textos); 
+}
+body.image {
+    background: var(--Body_Bg), url("../img/Index.header.jpg");
 }
 
 .Separador {
@@ -24,6 +27,7 @@ header {
     backdrop-filter: blur(20px);
     position: relative;
     top: 0;
+    box-shadow: 0px 2px 5px 0px rgba(102,102,102,1);
 }
 
 .Logo {

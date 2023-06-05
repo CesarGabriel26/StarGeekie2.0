@@ -1,6 +1,7 @@
 :root {
 
     --Body_Bg: linear-gradient(to top, black,black,rgba(0, 0, 0, 0.589));
+    --Body_Bg_normal: black;
     --Textos: rgb(255,255,255);
 
     /* !:> BaseColors */

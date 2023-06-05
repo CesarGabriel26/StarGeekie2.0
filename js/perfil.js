@@ -10,7 +10,9 @@ let Name = document.getElementById('Name')
 SetAll()
 
 function SetAll() {
-    Name.innerHTML = Nome
+    if (Name) {
+        Name.innerHTML = Nome
+    }
 
     UserPicture.forEach(pic => {
         pic.src = PfpPath
@@ -23,4 +25,8 @@ function LogOut() {
     localStorage.setItem('Senha',"")
     localStorage.setItem('Pfp',"")
     window.location.href = '../index.html'
+}
+
+function GotoConteudo(data) {
+    localStorage.setItem('currentStorage',data)
 }
