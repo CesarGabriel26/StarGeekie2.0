@@ -69,7 +69,7 @@
         <div class="CardContainer" id="CardContainer">
             
             <div title="Asistir: ${Nome}" class="Poster" href="#">
-                <img src="${Link}" class="img" width="170" height="270" alt="Poster ${Nome}" loading="lazy"
+                <img src="${Link}" class="img" alt="Poster ${Nome}" loading="lazy"
                     decoding="async">
                 <div class="grad"></div>
                 <div class="infos">
@@ -86,60 +86,67 @@
 
         <form id="Form" class="RegisterContainer">
 
-            <div class="input">
-                <label for="Nome">Nome</label>
-                <input required type="text" id="Nome">
+            <div class="right_Form">
+                <div class="input">
+                    <label for="Nome">Nome</label>
+                    <input required type="text" id="Nome">
+                </div>
+                <div class="input">
+                    <label for="Link">Link</label>
+                    <input required type="text" id="Link">
+                </div>
+    
+                <hr style="background: transparent;" class="Separador">
+                <h4>Tipo</h4>
+    
+                <div class="input radio">
+                    <div class="Subinput">
+                        <input type="radio" checked name="Tipo" value="Filmes" id="Tipo"> 
+                        <p>Filme</p>
+                    </div>
+                    <div class="Subinput">
+                        <input type="radio" name="Tipo" value="Series" id="Tipo"> 
+                        <p>Serie</p>
+                    </div>
+                    <div class="Subinput">
+                        <input type="radio" name="Tipo" value="Mangas" id="Tipo"> 
+                        <p>Manga</p>
+                    </div>
+                    <div class="Subinput">
+                        <input type="radio" name="Tipo" value="Animes" id="Tipo"> 
+                        <p>Animes</p>
+                    </div>
+                </div>
+    
+                <hr style="background: transparent;" class="Separador">
+                <h4>Opcional</h4>
+    
+                <div class="input">
+                    <label for="Ano">Ano</label>
+                    <input value="0" maxlength="4" type="text" id="Ano">
+                </div>
+                <div class="input">
+                    <label for="Pontuação">Pontuação</label>
+                    <input type="number" value="0" max="5" id="Pontuação">
+                </div>
+                <div class="input">
+                    <label for="duracaoH">duracaoH</label>
+                    <input type="number" value="0" max="24" id="duracaoH">
+                </div>
+                <div class="input">
+                    <label for="duracaoM">duracaoM</label>
+                    <input type="number" value="0" max="60" id="duracaoM">
+                </div>
+                <div class="input">
+                    <button id="Registrar" type="button">Registrar</button>
+                    <button id="Cancelar" type="button">Cancelar</button>
+                </div>
             </div>
-            <div class="input">
-                <label for="Link">Link</label>
-                <input required type="text" id="Link">
+            <div class="left_Form">
+                <h3>Descrição</h3>
+                <textarea name="" id="DescricaoINP"></textarea>
             </div>
 
-            <hr style="background: transparent;" class="Separador">
-            <h4>Tipo</h4>
-
-            <div class="input radio">
-                <div class="Subinput">
-                    <input type="radio" checked name="Tipo" value="Filmes" id="Tipo"> 
-                    <p>Filme</p>
-                </div>
-                <div class="Subinput">
-                    <input type="radio" name="Tipo" value="Series" id="Tipo"> 
-                    <p>Serie</p>
-                </div>
-                <div class="Subinput">
-                    <input type="radio" name="Tipo" value="Mangas" id="Tipo"> 
-                    <p>Manga</p>
-                </div>
-                <div class="Subinput">
-                    <input type="radio" name="Tipo" value="Animes" id="Tipo"> 
-                    <p>Animes</p>
-                </div>
-            </div>
-
-            <hr style="background: transparent;" class="Separador">
-            <h4>Opcional</h4>
-
-            <div class="input">
-                <label for="Ano">Ano</label>
-                <input value="0" maxlength="4" type="text" id="Ano">
-            </div>
-            <div class="input">
-                <label for="Pontuação">Pontuação</label>
-                <input type="number" value="0" max="5" id="Pontuação">
-            </div>
-            <div class="input">
-                <label for="duracaoH">duracaoH</label>
-                <input type="number" value="0" max="24" id="duracaoH">
-            </div>
-            <div class="input">
-                <label for="duracaoM">duracaoM</label>
-                <input type="number" value="0" max="60" id="duracaoM">
-            </div>
-            <div class="input">
-                <button id="Registrar" type="button">Registrar</button>
-                <button id="Cancelar" type="button">Cancelar</button>
-            </div>
         </form>
 
     </main>

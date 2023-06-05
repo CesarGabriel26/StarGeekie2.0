@@ -12,7 +12,7 @@ Opcoes.forEach(opcao => {
 });
 
 
-LoadList('moviesLikes')
+//LoadList('moviesLikes')
 
 function LoadList(Data){
     let container = document.getElementById('Container_All')

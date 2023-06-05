@@ -9,12 +9,13 @@ let AnoINP = document.getElementById('Ano')
 let PontuaçãoINP = document.getElementById('Pontuação')
 let duracaoHINP = document.getElementById('duracaoH')
 let duracaoMINP = document.getElementById('duracaoM')
+let DescricaoINP = document.getElementById('DescricaoINP')
 
 let Registrar = document.getElementById('Registrar')
 let Cancelar = document.getElementById('Cancelar')
 let Tipos = document.querySelectorAll('#Tipo')
 
-var array = []
+var array_ = []
 
 setInterval(()=> {
     CheckDuracaoINP()
@@ -22,12 +23,12 @@ setInterval(()=> {
 
     Tipos.forEach(Tipo => {
         if(Tipo.checked){
-            array = localStorage.getItem(Tipo.value)
+            array_ = JSON.parse(localStorage.getItem(Tipo.value))
         }
     });
 
-    if(array == null){
-        array = []
+    if(array_ == null){
+        array_ = []
     }
 
 },100)
@@ -87,6 +88,10 @@ Cancelar.addEventListener('click',()=>{
 
 Registrar.addEventListener('click',()=>{
 
+    if (confirm('Deseja registrar esta midia?') == false) {
+        return
+    }
+
     var Storage
     var Nome = NomeINP.value
     var Link = LinkINP.value
@@ -94,13 +99,13 @@ Registrar.addEventListener('click',()=>{
     var Pontuação = PontuaçãoINP.value
     var duracaoH = duracaoHINP.value
     var duracaoM = duracaoMINP.value
+    var Descricao = DescricaoINP.value
 
     Tipos.forEach(Tipo => {
         if(Tipo.checked){
             Storage = Tipo.value
         }
     });
-
     if(ChecarVasio(Nome,Link)){
 
         var Conteudo = {
@@ -109,11 +114,11 @@ Registrar.addEventListener('click',()=>{
             Ano : Ano,
             Pontuação : Pontuação,
             duracaoH : duracaoH,
-            duracaoM : duracaoM
+            duracaoM : duracaoM,
+            Descricao : Descricao
         }
-
-        array.push(Conteudo)
-        localStorage.setItem(Storage,JSON.stringify(array))/**/
+        array_.push(Conteudo)
+        localStorage.setItem(Storage,JSON.stringify(array_))/**/
     }
 
 })

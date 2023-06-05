@@ -18,7 +18,7 @@ function LoadFilmData() {
             document.body.style.backgroundSize = `cover`
 
             img.src = item.Link
-            
+
             right.innerHTML = `
                 <p>ASSISTIR ${item.Nome} ONLINE</p>
                 <h2>${item.Nome}</h2>
@@ -29,21 +29,56 @@ function LoadFilmData() {
                     <div class="t">${item.duracaoH}h, ${item.duracaoM}min</div>
                 </div>
             `
-
+            document.getElementById('descricao').innerHTML = item.Descricao
         }
 
     }
 
 }
 
-function AddCurtido(){
+function AddCurtido() {
     var lista = []
-    lista = JSON.parse(localStorage.getItem('moviesLikes'))
-    
+    var user = []
+
+    user = JSON.parse(localStorage.getItem('UserDb'))
+
+    user.forEach(us => {
+        if(us.Nome == localStorage.getItem('Nome')){
+            lista = us.moviesLikes
+        }
+    })
+
     if (lista == null) {
         lista = []
     }
+    console.log(lista);
 
-    lista.push(item)
-    localStorage.setItem('moviesLikes',JSON.stringify(lista))
+    if (lista.length != 0) {
+
+        lista.forEach(item_ => {
+            if (item.Nome != item_.Nome) {
+                lista.push(item)
+
+                
+                user.forEach(us => {
+                    if(us.Nome == localStorage.getItem('Nome')){
+                        us.moviesLikes = lista
+                    }
+                })
+                localStorage.setItem('UserDb', JSON.stringify(user))
+            }
+        });
+    } else {
+
+        lista.push(item)
+        user.forEach(us => {
+            if(us.Nome == localStorage.getItem('Nome')){
+                us.moviesLikes = lista
+            }
+        })
+        localStorage.setItem('UserDb', JSON.stringify(user))
+    }
+
+
+
 }

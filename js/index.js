@@ -1,9 +1,7 @@
 let Buttons = document.querySelectorAll("#Entrar")
 let Select_language = document.querySelectorAll("#LanguageSelect");
 
-if (localStorage.getItem('Nome') != "") {
-    window.location.href = "html/perfil.html"
-}
+
 
 Buttons.forEach(button =>{
     button.addEventListener('click',()=>{

@@ -102,6 +102,10 @@
 .Poster .infos p {
     margin-bottom: 15px;
 }
+.Poster img {
+    min-width: 12.4vw;
+    min-height: 18.5vw;
+}
 .Poster .grad {
     background: linear-gradient(to top, rgba(0, 0, 0, 0.699),rgba(0, 0, 0, 0.034));
     position: absolute;

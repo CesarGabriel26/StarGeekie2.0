@@ -7,6 +7,8 @@ let pfpInputBtn = document.getElementById('pfpInputBtn')
 
 var PfpPath = null
 
+var Usuarios = []
+
 function Mudar(){
 
     if(Box.classList.contains('Login')){
@@ -39,7 +41,22 @@ function MostrarAlerta(Texto) {
 function Login(){
     UserNameLog = document.getElementById('UserNameLog').value
     PasswordLog = document.getElementById('PasswordLog').value
-    ValidarInputs(UserNameLog,'none',PasswordLog,"none")
+    if (ValidarInputs(UserNameLog,'none',PasswordLog,"none")) {
+
+        Usuarios.forEach(user => {
+            if (UserNameLog == user.Nome && PasswordLog == user.Senha) {
+                localStorage.setItem('Nome', user.Nome)
+                localStorage.setItem('Email', user.Email)
+                localStorage.setItem('Senha', user.Senha)
+                localStorage.setItem('Pfp', user.Pfp)
+                localStorage.setItem('moviesLikes',user.moviesLikes)
+
+                window.location.href = "../html/perfil.html"
+            }
+        })
+
+
+    }
 }
 
 function SingUp() {
@@ -54,11 +71,19 @@ function SingUp() {
     }
 
     if (ValidarInputs(Nome,Email,Senha,ConfSenha)) {
-        localStorage.setItem('Nome',Nome)
-        localStorage.setItem('Email',Email)
-        localStorage.setItem('Senha',Senha)
-        localStorage.setItem('Pfp',PfpPath)
-        window.location.href = "../html/perfil.html"
+        var Usuario = {
+            Nome: Nome,
+            Email: Email,
+            Senha: Senha,
+            Pfp: PfpPath,
+            moviesLikes: []
+        }
+
+        Usuarios.push(Usuario)
+
+        localStorage.setItem('UserDb',JSON.stringify(Usuarios))
+        alert('Cadastro efetuado')
+        Mudar()
     }
 }
 

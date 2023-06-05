@@ -19,11 +19,11 @@ function SetAll() {
     })
 }
 
-function LogOut() {    
-    localStorage.setItem('Nome',"")
-    localStorage.setItem('Email',"")
-    localStorage.setItem('Senha',"")
-    localStorage.setItem('Pfp',"")
+function LogOut() {  
+    localStorage.setItem('Nome', "")
+    localStorage.setItem('Email', "")
+    localStorage.setItem('Senha', "")
+    localStorage.setItem('Pfp', "")
     window.location.href = '../index.html'
 }
 

@@ -1,5 +1,5 @@
 main {
-    height: 458px;
+    height: calc(100% - 200px);
     display: flex;
     align-items: center;
     justify-content: center;
