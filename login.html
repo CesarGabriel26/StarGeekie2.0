@@ -1,26 +1,24 @@
 <!DOCTYPE html5>
 <html lang='pt-BR'>
 
+
 <head>
     <meta charset='UTF-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
     <meta name='viewport' content='width=device-width, initial-scale=1.0'>
-    <title>Star Geekie</title>
+    <title>Star Geekie - login & sing up</title>
 
-    <link rel="stylesheet" href="css/root.css">
-    <link rel="stylesheet" href="css/index.css">
-    <link rel="stylesheet" href="css/img-video.css">
+    <link rel="stylesheet" href="../css/root.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/login-singup.css">
 
     <link rel="shortcut icon" href="svg/Star geekie.svg">
 
 </head>
 
-<body class="image">
+<body>
 
     <header>
-
-        <img src="svg/Star geekie icon.svg" alt="Logo Star geekie" class="Logo">
-
         <div class="options">
 
             <div class="langselect">
@@ -36,73 +34,51 @@
                         fill="currentColor"></path>
                 </svg>
             </div>
-            <button id="Entrar">Entrar</button>
         </div>
 
     </header>
 
     <main>
+        <input type="file" accept="image/png, image/gif, image/jpeg" style="position: absolute; opacity: 0;" id="pfpInput">
 
-        <div class="maintext">
-            <img src="svg/Star geekie.svg"  style="height: 100px;">
+        <div class="box Login"> <!-- SingUp -->
+            <div class="LoginBox active">
 
-            <h1>Filmes,séries e muito mais disponivel gratuitamente</h1>
-            <p>Assista onde quiser e quando quiser</p>
-            <p>Quer assitir? Informe seu email para criar ou entrar em sua conta</p>
-
-            <div class="loginContainer">
-                <input type="email" placeholder="Email" id="email"> 
-                <button id="Entrar">Entrar</button>
+                <div class="inputs">
+                    <input type="text" id="UserNameLog" placeholder="Nome de usuario">
+                    <input type="text" id="PasswordLog" placeholder="Senha">
+                </div>
+    
+                <div class="butons">
+                    <button onclick="Login()">Login</button>
+                    <button onclick="window.location.href = '../index.html'">Voltar</button>
+                </div>
+    
+                <p>Ainda não possui uma conta? <a onclick="Mudar()" href="#">Cadastre-se</a></p>
+                <p id="Alerta">asdasdasdasdas</p>
+    
+            </div>
+            <div class="SingUpBox ">
+                <div class="inputs">
+                    <input type="text" id="UserName" placeholder="Nome de usuario">
+                    <input type="text" id="Email" placeholder="Email">
+                    <input type="text" id="Password" placeholder="Senha">
+                    <input type="text" id="ConfirmPassword" placeholder="Confirmar Senha">
+                    <input type="button" id="pfpInputBtn" value="Escolha uma foto de perfil">
+                </div>
+    
+                <div class="butons">
+                    <button onclick="SingUp()">Sing-Up</button>
+                    <button onclick="Mudar()">Voltar</button>
+                </div>
+    
+                <div class="text"><p>Li e concordo com os <a href="#">termos de uso</a></p><input type="checkbox" name="" id="checkbox"></div>
+                <p id="Alerta">asdasdasdasdas</p>
+            
             </div>
         </div>
 
     </main>
-
-    <section>
-
-        <div class="container">
-
-            <div id="Img-Video">
-                <img src="img/device-pile.png" alt="">
-                <video autoplay="" playsinline="" muted="" loop="">
-                    <source src="img/video/video-devices.m4v" type="video/mp4">
-                </video>
-            </div>
-
-            <div class="texto">
-                <h1>Assista onde quiser</h1>
-                <p>Asista em qualquer dispositivo a qualquer momento</p>
-            </div>
-
-        </div>
-
-    </section>
-    <hr class="Separador">
-    <section>
-        <div class="container">
-            <div class="texto">
-                <h1>Baixe séries para assistir offline</h1>
-                <p>Disponivel apenas para assinantes</p>
-            </div>
-
-            <div id="Img-Video">
-                <div class="container_DW">
-                    <img src="img/mobile-0819.jpg" alt="">
-
-                    <div class="DW">
-                        <img src="img/boxshot.png" id="imgdw" alt="">
-                        <div class="textos">
-                            <h2>Stranger Things</h2>
-                            <p>Download em andamento...</p>
-                        </div>
-                        <img src="img/download-icon.gif" id="gifdw" alt="">
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-    <hr class="Separador">
 
     <footer>
         <div class="options">
@@ -120,11 +96,11 @@
                         fill="currentColor"></path>
                 </svg>
             </div>
-            <button id="Entrar">Entrar</button>
         </div>
     </footer>
 
-    <script src="js/index.js"></script>
+    <script src="../js/index.js"></script>
+    <script src="../js/login.js"></script>
 
 </body>
 
