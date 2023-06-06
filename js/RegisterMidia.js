@@ -63,7 +63,7 @@ function CriarCard() {
     var duracaoM = duracaoMINP.value
 
     var html = `
-        <a title="Asistir: ${Nome}" class="Poster" href="#">
+        <a onmouseenter="Hover_Demo()" onmouseleave="NoHover_Demo()" title="Asistir: ${Nome}" class="Poster" id="Poster" href="#">
             <img src="${Link}" class="img" width="170" height="270" alt="Poster ${Nome}" loading="lazy"
                 decoding="async">
             <div class="grad"></div>
@@ -106,6 +106,7 @@ Registrar.addEventListener('click',()=>{
             Storage = Tipo.value
         }
     });
+    
     if(ChecarVasio(Nome,Link)){
 
         var Conteudo = {
@@ -115,7 +116,8 @@ Registrar.addEventListener('click',()=>{
             Pontuação : Pontuação,
             duracaoH : duracaoH,
             duracaoM : duracaoM,
-            Descricao : Descricao
+            Descricao : Descricao,
+            gif: LinkGif
         }
         array_.push(Conteudo)
         localStorage.setItem(Storage,JSON.stringify(array_))/**/
@@ -131,5 +133,22 @@ function ChecarVasio(Nome,Link) {
     if (Link == "") {
         return false
     }
+
     return true
 }
+
+function Hover_Demo() {
+    let Poster = document.getElementById('Poster')
+
+    var img = Poster.getElementsByTagName('img')[0]
+
+    img.src = LinkGifInp.value
+
+}
+function NoHover_Demo() {
+    let Poster = document.getElementById('Poster')
+    var img = Poster.getElementsByTagName('img')[0]
+
+    img.src = LinkINP.value
+}
+

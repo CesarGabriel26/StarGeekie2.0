@@ -21,7 +21,7 @@
 <body>
 
     <header>
-        <img src="../svg/Star geekie icon.svg" alt="Logo Star geekie" class="Logo">
+        <img  src="../svg/Star geekie icon.svg" alt="Logo Star geekie" class="Logo">
 
         <nav>
             <ul>
@@ -95,25 +95,26 @@
                     <label for="Link">Link</label>
                     <input required type="text" id="Link">
                 </div>
-    
+
+
                 <hr style="background: transparent;" class="Separador">
                 <h4>Tipo</h4>
     
                 <div class="input radio">
                     <div class="Subinput">
-                        <input type="radio" checked name="Tipo" value="Filmes" id="Tipo"> 
+                        <input onkeyup="CriarCard()" type="radio" checked name="Tipo" value="Filmes" id="Tipo"> 
                         <p>Filme</p>
                     </div>
                     <div class="Subinput">
-                        <input type="radio" name="Tipo" value="Series" id="Tipo"> 
+                        <input onkeyup="CriarCard()" type="radio" name="Tipo" value="Series" id="Tipo"> 
                         <p>Serie</p>
                     </div>
                     <div class="Subinput">
-                        <input type="radio" name="Tipo" value="Mangas" id="Tipo"> 
+                        <input onkeyup="CriarCard()" type="radio" name="Tipo" value="Mangas" id="Tipo"> 
                         <p>Manga</p>
                     </div>
                     <div class="Subinput">
-                        <input type="radio" name="Tipo" value="Animes" id="Tipo"> 
+                        <input onkeyup="CriarCard()" type="radio" name="Tipo" value="Animes" id="Tipo"> 
                         <p>Animes</p>
                     </div>
                 </div>
@@ -123,23 +124,23 @@
     
                 <div class="input">
                     <label for="Ano">Ano</label>
-                    <input value="0" maxlength="4" type="text" id="Ano">
+                    <input onkeyup="CriarCard()" value="0" maxlength="4" type="text" id="Ano">
                 </div>
                 <div class="input">
                     <label for="Pontuação">Pontuação</label>
-                    <input type="number" value="0" max="5" id="Pontuação">
+                    <input onkeyup="CriarCard()" type="number" value="0" max="5" id="Pontuação">
                 </div>
                 <div class="input">
                     <label for="duracaoH">duracaoH</label>
-                    <input type="number" value="0" max="24" id="duracaoH">
+                    <input onkeyup="CriarCard()" type="number" value="0" max="24" id="duracaoH">
                 </div>
                 <div class="input">
                     <label for="duracaoM">duracaoM</label>
-                    <input type="number" value="0" max="60" id="duracaoM">
+                    <input onkeyup="CriarCard()" type="number" value="0" max="60" id="duracaoM">
                 </div>
                 <div class="input">
                     <button id="Registrar" type="button">Registrar</button>
-                    <button id="Cancelar" type="button">Cancelar</button>
+                    <button onkeyup="CriarCard()" id="Cancelar" type="button">Cancelar</button>
                 </div>
             </div>
             <div class="left_Form">

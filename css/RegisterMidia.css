@@ -101,7 +101,6 @@ main {
     display: inline-block;
     transition: all .2s ease-in-out;
     overflow: hidden;
-    display: inline-block;
     background: #000;
     border-radius: 1.5vw;
     transform-origin: bottom;

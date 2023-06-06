@@ -7,7 +7,10 @@ let pfpInputBtn = document.getElementById('pfpInputBtn')
 
 var PfpPath = null
 
-var Usuarios = []
+Usuarios = JSON.parse(localStorage.getItem('UserDb'))
+if (Usuarios == null) {
+    var Usuarios = []
+}
 
 function Mudar(){
 
@@ -41,6 +44,7 @@ function MostrarAlerta(Texto) {
 function Login(){
     UserNameLog = document.getElementById('UserNameLog').value
     PasswordLog = document.getElementById('PasswordLog').value
+
     if (ValidarInputs(UserNameLog,'none',PasswordLog,"none")) {
 
         Usuarios.forEach(user => {
@@ -49,7 +53,7 @@ function Login(){
                 localStorage.setItem('Email', user.Email)
                 localStorage.setItem('Senha', user.Senha)
                 localStorage.setItem('Pfp', user.Pfp)
-                localStorage.setItem('moviesLikes',user.moviesLikes)
+                localStorage.setItem('moviesLikes',JSON.stringify(user.moviesLikes))
 
                 window.location.href = "../html/perfil.html"
             }
@@ -125,6 +129,5 @@ function ValidarInputs(Nome,Email,Senha,ConfSenha) {
             return false
         }   
     }
-
     return true
 }

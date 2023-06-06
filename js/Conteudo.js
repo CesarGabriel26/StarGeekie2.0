@@ -22,19 +22,19 @@ const Reset = `
 `
 
 function GotoConteudo(data) {
-    localStorage.setItem('currentStorage',data)
+    localStorage.setItem('currentStorage', data)
 }
 
-function GoToMidia(name){
-    localStorage.setItem('filmeClicado',name),
-    window.location.href = "MidiaPage.html"
+function GoToMidia(name) {
+    localStorage.setItem('filmeClicado', name),
+        window.location.href = "MidiaPage.html"
 }
 
 ItemNav.forEach(item => {
 
     if (item.getAttribute('data-Storager') == localStorage.getItem('currentStorage')) {
         item.classList.add('atual')
-    }else {
+    } else {
         item.classList.remove('atual')
     }
 })
@@ -45,18 +45,18 @@ Recomendar(localStorage.getItem('currentStorage'))
 
 
 
-function LoadList(Data){
+function LoadList(Data) {
     TituloRecente.innerHTML = `Veja ${Data} - Recomendados`
 
 
     var list = JSON.parse(localStorage.getItem(Data))
     Container_All.innerHTML = ""
 
-    if(list && list != "" && list != null){
-        list.forEach(item =>{
+    if (list && list != "" && list != null) {
+        list.forEach((item, i) => {
 
             var html = `
-                <a onclick="GoToMidia('${item.Nome}')" title="Asistir: ${item.Nome}" class="Poster" id="Poster" href="#">
+                <a onmouseenter="Hover(${i},'Normal')" onmouseleave="NoHover(${i}, 'Normal')" onclick="GoToMidia('${item.Nome}')" title="Asistir: ${item.Nome}" class="Poster" id="Poster" href="#">
                     <img src="${item.Link}" class="img" width="170" height="270" alt="Poster ${item.Nome}" loading="lazy"
                         decoding="async">
                     <div class="grad"></div>
@@ -72,7 +72,7 @@ function LoadList(Data){
             `
             Container_All.innerHTML += html
         })
-    }else {
+    } else {
         Container_All.innerHTML = Reset
     }
 
@@ -82,13 +82,13 @@ function LoadList(Data){
 function Recomendar(Data) {
     var Array = JSON.parse(localStorage.getItem(Data))
 
-    if(Array && Array != "" && Array != null){
+    if (Array && Array != "" && Array != null) {
         for (let i = 0; i < 5; i++) {
             var Index = parseInt(Math.random() * Array.length)
             const item = Array[Index];
-            
+
             var html = `
-                <a onclick="GoToMidia('${item.Nome}')" title="Asistir: ${item.Nome}" class="Poster" id="Poster" href="#">
+                <a onmouseenter="Hover(${i},'recom')" onmouseleave="NoHover(${i}, 'recom')" onclick="GoToMidia('${item.Nome}')" title="Asistir: ${item.Nome} recomendado" class="Poster" id="Poster" href="#">
                     <img src="${item.Link}" class="img" width="170" height="270" alt="Poster ${item.Nome}" loading="lazy"
                         decoding="async">
                     <div class="grad"></div>
@@ -105,7 +105,7 @@ function Recomendar(Data) {
             container_recomendados.innerHTML += html
 
         }
-    }else {
+    } else {
         container_recomendados.innerHTML = Reset
     }
 }

@@ -1,18 +1,18 @@
 let right = document.getElementById('top')
 
 LoadFilmData()
-var item
 
 function LoadFilmData() {
     var Nome = localStorage.getItem('filmeClicado')
     var Data = JSON.parse(localStorage.getItem(localStorage.getItem('currentStorage')))
 
     let img = document.getElementById('img')
+    var item
 
     for (let i = 0; i < Data.length; i++) {
         item = Data[i];
-
         if (Nome == item.Nome) {
+
             document.body.style.background = `var(--Body_Bg), url("${item.Link}")`
             document.body.style.backgroundRepeat = `no-repeat`
             document.body.style.backgroundSize = `cover`
@@ -43,42 +43,56 @@ function AddCurtido() {
     user = JSON.parse(localStorage.getItem('UserDb'))
 
     user.forEach(us => {
-        if(us.Nome == localStorage.getItem('Nome')){
+        if (us.Nome == localStorage.getItem('Nome')) {
             lista = us.moviesLikes
         }
     })
-
     if (lista == null) {
         lista = []
     }
-    console.log(lista);
 
-    if (lista.length != 0) {
+    var podeAdd = false
+    
 
+    if (lista.length > 0) {
         lista.forEach(item_ => {
-            if (item.Nome != item_.Nome) {
-                lista.push(item)
-
-                
-                user.forEach(us => {
-                    if(us.Nome == localStorage.getItem('Nome')){
-                        us.moviesLikes = lista
-                    }
-                })
-                localStorage.setItem('UserDb', JSON.stringify(user))
+            if (localStorage.getItem('filmeClicado') != item_.Nome) {
+                podeAdd = true
+            }else {
+                podeAdd = false
             }
         });
-    } else {
+    }else {
+        podeAdd = true
+    }
 
-        lista.push(item)
-        user.forEach(us => {
-            if(us.Nome == localStorage.getItem('Nome')){
-                us.moviesLikes = lista
+
+    if (podeAdd) {
+        lista.push(GetData())
+        console.log(lista);
+
+        localStorage.setItem('moviesLikes', JSON.stringify(lista))
+        user.forEach((us , i) => {
+            if (us.Nome == localStorage.getItem('Nome')) {
+                user[i].moviesLikes = lista
             }
         })
         localStorage.setItem('UserDb', JSON.stringify(user))
     }
 
+}
 
+function GetData() {
+    var Data = JSON.parse(localStorage.getItem(localStorage.getItem('currentStorage')))
+    var Nome = localStorage.getItem('filmeClicado')
 
+    var item
+
+    for (let i = 0; i < Data.length; i++) {
+        item = Data[i];
+        if (Nome == item.Nome) {
+            return item
+        }
+
+    }
 }

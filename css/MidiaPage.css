@@ -58,6 +58,9 @@ main {
 
 .buttons{
     margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
 .buttons button {
     height: 40px;
@@ -70,6 +73,25 @@ main {
     background: var(--item_bg);
     transition: .2s ease-in-out;
 }
+.buttons #Curtir svg{
+    height: 100%;
+    width: 100%;
+    fill: none;
+    stroke: currentColor; 
+    transition: .2s ease-in;
+}
+.buttons #Curtir:hover svg{
+    fill: red;
+    stroke: red;
+}
+.buttons #Curtir {
+    height: 40px;
+    width: 40px;
+    margin: 0;
+    background-color: transparent;
+}
+.buttons #Curtir:hover {color: var(--Textos);}
+
 .buttons button:hover {
     color: black;
     background: var(--orange);
