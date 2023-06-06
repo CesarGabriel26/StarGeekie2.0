@@ -80,7 +80,8 @@ function SingUp() {
             Email: Email,
             Senha: Senha,
             Pfp: PfpPath,
-            moviesLikes: []
+            moviesLikes: [],
+            moviesSeeLater: []
         }
 
         Usuarios.push(Usuario)

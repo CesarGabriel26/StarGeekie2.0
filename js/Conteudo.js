@@ -44,7 +44,6 @@ LoadList(localStorage.getItem('currentStorage'))
 Recomendar(localStorage.getItem('currentStorage'))
 
 
-
 function LoadList(Data) {
     TituloRecente.innerHTML = `Veja ${Data} - Recomendados`
 
@@ -88,7 +87,7 @@ function Recomendar(Data) {
             const item = Array[Index];
 
             var html = `
-                <a onmouseenter="Hover(${i},'recom')" onmouseleave="NoHover(${i}, 'recom')" onclick="GoToMidia('${item.Nome}')" title="Asistir: ${item.Nome} recomendado" class="Poster" id="Poster" href="#">
+                <a onclick="GoToMidia('${item.Nome}')" title="Asistir: ${item.Nome} recomendado" class="Poster" id="Poster" href="#">
                     <img src="${item.Link}" class="img" width="170" height="270" alt="Poster ${item.Nome}" loading="lazy"
                         decoding="async">
                     <div class="grad"></div>
@@ -102,8 +101,20 @@ function Recomendar(Data) {
                     </div>
                 </a>
             `
-            container_recomendados.innerHTML += html
 
+            var Poster = document.querySelectorAll('#container_recomendados #Poster')
+            if (Poster.length >0) {
+                Poster.forEach(post => {
+                    var title = post.getElementsByTagName('p')[0].innerHTML
+                    
+                    if (item.Nome != title) {
+                        console.log(item.Nome);
+                        container_recomendados.innerHTML += html
+                    }
+                })
+            }else {
+                container_recomendados.innerHTML += html
+            }
         }
     } else {
         container_recomendados.innerHTML = Reset

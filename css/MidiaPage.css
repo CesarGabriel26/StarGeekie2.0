@@ -73,17 +73,30 @@ main {
     background: var(--item_bg);
     transition: .2s ease-in-out;
 }
+
+.buttons #AsistirMaisTarde svg,
 .buttons #Curtir svg{
     height: 100%;
     width: 100%;
-    fill: none;
+    fill: black;
     stroke: currentColor; 
     transition: .2s ease-in;
+    cursor: pointer;
 }
+
+.buttons #Curtir svg.Cutido,
 .buttons #Curtir:hover svg{
     fill: red;
     stroke: red;
 }
+
+.buttons #AsistirMaisTarde svg.Asistir,
+.buttons #AsistirMaisTarde:hover svg{
+    fill: none;
+    stroke: var(--orange);
+}
+
+.buttons #AsistirMaisTarde,
 .buttons #Curtir {
     height: 40px;
     width: 40px;

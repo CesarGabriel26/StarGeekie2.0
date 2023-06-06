@@ -70,6 +70,7 @@
 .Poster {
     min-width: 12.4vw;
     min-height: 18.5vw;
+
     position: relative;
     display: inline-block;
     transition: all .2s ease-in-out;
@@ -84,6 +85,7 @@
     margin-top: 20px;
     margin-right: 10px;
     
+    object-position: center;
 }
 .Poster:hover {
     transform: scale(1.05);
