@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="../css/Perfil.css">
     <link rel="stylesheet" href="../css/header-nav.css">
     <link rel="stylesheet" href="../css/MidiaPage.css">
+    <link rel="stylesheet" href="../css/@media.css">
 
     <link rel="shortcut icon" href="../svg/Star geekie.svg">
 
@@ -24,6 +25,8 @@
     <header>
         <img src="../svg/Star geekie icon.svg" alt="Logo Star geekie" class="Logo">
 
+        
+
         <nav>
             <ul>
                 <li><a href="Conteudo.html" onclick="GotoConteudo('Filmes')" data-Storager="Filmes">Filmes</a></li>
@@ -32,7 +35,12 @@
                 <li><a href="Conteudo.html" onclick="GotoConteudo('Mangas')" data-Storager="Mangas">Mangas</a></li>
             </ul>
         </nav>
-
+        <div onclick="Show_Hide(true)" class="Drop">
+            <svg xmlns="http://www.w3.org/2000/svg" class="MenuIcon" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"
+                    d="M80 160h352M80 256h352M80 352h352" />
+            </svg>
+        </div>
         <div class="right">
             <a href="#Pesquisa.html" class="Icon" title="Pesquisar">
                 <svg viewBox="0 0 551.13 551.13" xmlns="http://www.w3.org/2000/svg">
@@ -57,7 +65,48 @@
     </header>
 
     <main>
+        <div class="SideHeader" id="SideHEader">
+            <div class="SideHeaderTop">
+                <button onclick="Show_Hide(false)" class="Drop">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+                    </svg>
+                </button>
+                <a class="SideuserPfp" href="perfil.html">
+                    <div class="SideuserPfp">
+                        <img src="" id="UserPicture">
+                    </div>
+                </a>
+            </div>
+            <ul class="DropDw">
+                <li>
+                    <a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Filmes')"
+                        data-Storager="Filmes">Filmes</a>
+                </li>
+                <li>
+                    <a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Series')"
+                        data-Storager="Series">Series</a>
+                </li>
+                <li>
+                    <a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Animes')"
+                        data-Storager="Animes">Animes</a>
+                </li>
+                <li>
+                    <a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Mangas')"
+                        data-Storager="Mangas">Mangas</a>
+                </li>
+                <li>
+                    <a class="ItemNav" href="#Pesquisa.html">Main Filmes</a>
+                </li>
+                <li>
+                    <a class="ItemNav" href="Registrar.html">Registrar Nova midia</a>
+                </li>
+            </ul>
 
+            <button class="LogoutBTN" onclick="LogOut()">Log Out</button>
+
+        </div>
         <div class="container">
             <div class="left">
                 <img id="img" src="${item.Link}" width="330" height="470" alt="Poster ${item.Nome}" loading="lazy"
@@ -86,28 +135,17 @@
                             <svg xmlns="http://www.w3.org/2000/svg" id="ionicon" viewBox="0 0 512 512">
                                 <path
                                     d="M352.92 80C288 80 256 144 256 144s-32-64-96.92-64c-52.76 0-94.54 44.14-95.08 96.81-1.1 109.33 86.73 187.08 183 252.42a16 16 0 0018 0c96.26-65.34 184.09-143.09 183-252.42-.54-52.67-42.32-96.81-95.08-96.81z"
-                                    stroke-linecap="round" stroke-linejoin="round"
-                                    stroke-width="32" />
+                                    stroke-linecap="round" stroke-linejoin="round" stroke-width="32" />
                             </svg>
                         </a>
                         <a title="Asistir mais tarde" id="AsistirMaisTarde" onclick="AddMaisTarde()">
-                            <svg xmlns="http://www.w3.org/2000/svg" 
-                                class="ionicon" 
-                                viewBox="0 0 512 512"
-                                id="Clock"
-                            >
-                                <path 
-                                    d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"  
-                                    stroke-miterlimit="10" 
-                                    stroke-width="32"/>
-                                <path 
-                                    stroke-linecap="round" 
-                                    stroke-linejoin="round" 
-                                    stroke-width="32" 
-                                    d="M256 128v144h96"
-                                />
+                            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512" id="Clock">
+                                <path d="M256 64C150 64 64 150 64 256s86 192 192 192 192-86 192-192S362 64 256 64z"
+                                    stroke-miterlimit="10" stroke-width="32" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="32"
+                                    d="M256 128v144h96" />
                             </svg>
-                        </button>
+                            </button>
                     </div>
                 </div>
 
@@ -117,6 +155,7 @@
     </main>
 
 
+    <script src="../js/SideHeader.js"></script>
     <script src="../js/perfil.js"></script>
     <script src="../js/MidiaPage.js"></script>
     <script src="../js/Fav.js"></script>

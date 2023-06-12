@@ -6,28 +6,32 @@ function LoadFilmData() {
     var Nome = localStorage.getItem('filmeClicado')
     var Data = JSON.parse(localStorage.getItem(localStorage.getItem('currentStorage')))
     var lista = JSON.parse(localStorage.getItem('moviesLikes'))
-    var lista2 = JSON.parse(localStorage.getItem('moviesSeeLater'))
-    
+    var listaSeeLater = JSON.parse(localStorage.getItem('moviesSeeLater'))
+
     let img = document.getElementById('img')
     var item
 
-    lista.forEach((item_ , i) =>{
-        if (Nome == item_.Nome) {
+    if (lista) {
+        lista.forEach((item_, i) => {
             var icon = document.getElementById('ionicon')
-            icon.classList.add('Cutido')
-        }else{
-            icon.classList.remove('Cutido')
-        }
-    })
+            if (Nome == item_.Nome) {
+                icon.classList.add('Cutido')
+            } else {
+                icon.classList.remove('Cutido')
+            }
+        })
+    }
 
-    lista2.forEach((item_2 , i) =>{
-        if (Nome == item_2.Nome) {
+    if (listaSeeLater) {
+        listaSeeLater.forEach((item_2, i) => {
             var icon2 = document.getElementById('Clock')
-            icon2.classList.add('Asistir')
-        }else{
-            icon2.classList.remove('Asistir')
-        }
-    })
+            if (Nome == item_2.Nome) {
+                icon2.classList.add('Asistir')
+            } else {
+                icon2.classList.remove('Asistir')
+            }
+        })
+    }
 
     for (let i = 0; i < Data.length; i++) {
         item = Data[i];
@@ -56,13 +60,13 @@ function LoadFilmData() {
 
 }
 
-function AddCurtido() { 
+function AddCurtido() {
     var lista = []
     var user = []
 
     user = JSON.parse(localStorage.getItem('UserDb'))
     var icon = document.getElementById('ionicon')
-    
+
     user.forEach(us => {
         if (us.Nome == localStorage.getItem('Nome')) {
             lista = us.moviesLikes
@@ -73,38 +77,38 @@ function AddCurtido() {
     }
 
     var podeAdd = false
-    
+
 
     if (lista.length > 0) {
         lista.forEach(item_ => {
             if (localStorage.getItem('filmeClicado') != item_.Nome) {
                 podeAdd = true
-            }else {
-                if(icon.classList.contains("Cutido")){
+            } else {
+                if (icon.classList.contains("Cutido")) {
                     var i = lista.indexOf(GetData())
-                    lista.splice(i,1)
+                    lista.splice(i, 1)
                     podeAdd = true
-                }else {
+                } else {
                     podeAdd = false
                 }
             }
         });
-    }else {
+    } else {
         podeAdd = true
     }
 
 
     if (podeAdd) {
 
-        if(icon.classList.contains("Cutido")){
+        if (icon.classList.contains("Cutido")) {
             icon.classList.remove('Cutido')
-        }else {
+        } else {
             lista.push(GetData())
             icon.classList.add('Cutido')
         }
 
         localStorage.setItem('moviesLikes', JSON.stringify(lista))
-        user.forEach((us , i) => {
+        user.forEach((us, i) => {
             if (us.Nome == localStorage.getItem('Nome')) {
                 user[i].moviesLikes = lista
             }
@@ -113,13 +117,13 @@ function AddCurtido() {
     }
 
 }
-function AddMaisTarde() { 
+function AddMaisTarde() {
     var lista = []
     var user = []
 
     user = JSON.parse(localStorage.getItem('UserDb'))
     var icon = document.getElementById('Clock')
-    
+
     user.forEach(us => {
         if (us.Nome == localStorage.getItem('Nome')) {
             lista = us.moviesSeeLater
@@ -130,38 +134,38 @@ function AddMaisTarde() {
     }
 
     var podeAdd = false
-    
+
 
     if (lista.length > 0) {
         lista.forEach(item_ => {
             if (localStorage.getItem('filmeClicado') != item_.Nome) {
                 podeAdd = true
-            }else {
-                if(icon.classList.contains("Asistir")){
+            } else {
+                if (icon.classList.contains("Asistir")) {
                     var i = lista.indexOf(GetData())
-                    lista.splice(i,1)
+                    lista.splice(i, 1)
                     podeAdd = true
-                }else {
+                } else {
                     podeAdd = false
                 }
             }
         });
-    }else {
+    } else {
         podeAdd = true
     }
 
 
     if (podeAdd) {
 
-        if(icon.classList.contains("Asistir")){
+        if (icon.classList.contains("Asistir")) {
             icon.classList.remove('Asistir')
-        }else {
+        } else {
             lista.push(GetData())
             icon.classList.add('Asistir')
         }
 
         localStorage.setItem('moviesSeeLater', JSON.stringify(lista))
-        user.forEach((us , i) => {
+        user.forEach((us, i) => {
             if (us.Nome == localStorage.getItem('Nome')) {
                 user[i].moviesSeeLater = lista
             }

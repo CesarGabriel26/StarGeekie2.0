@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../css/Conteudo.css">
 
     <link rel="shortcut icon" href="../svg/Star geekie.svg">
+    <link rel="stylesheet" href="../css/@media.css">
 
 </head>
 
@@ -23,6 +24,13 @@
 
     <header>
         <img src="../svg/Star geekie icon.svg" alt="Logo Star geekie" class="Logo">
+
+        <div onclick="Show_Hide(true)" class="Drop">
+            <svg xmlns="http://www.w3.org/2000/svg" class="MenuIcon" viewBox="0 0 512 512">
+                <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="32"
+                    d="M80 160h352M80 256h352M80 352h352" />
+            </svg>
+        </div>
 
         <nav>
             <ul>
@@ -49,11 +57,10 @@
             </a>
 
             <a href="Registrar.html" title="Registrar Midia" class="Icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960" >
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -960 960 960">
                     <path
-                        d="M226-160q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47l-66 66Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm-40 508v-65l243-243 65 65-243 243h-65Zm294-508q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm40 239-65-65 25-25q8-8 20-8.5t20 7.5l26 26q8 8 7.5 20t-8.5 20l-25 25Z" 
-                        fill="currentColor"
-                    ></path>
+                        d="M226-160q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm254 254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47l-66 66Zm0-254q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm-40 508v-65l243-243 65 65-243 243h-65Zm294-508q-28 0-47-19t-19-47q0-28 19-47t47-19q28 0 47 19t19 47q0 28-19 47t-47 19Zm40 239-65-65 25-25q8-8 20-8.5t20 7.5l26 26q8 8 7.5 20t-8.5 20l-25 25Z"
+                        fill="currentColor"></path>
                 </svg>
             </a>
 
@@ -65,7 +72,49 @@
         </div>
     </header>
 
+    
+
     <main>
+        <div class="SideHeader" id="SideHEader">
+            <div class="SideHeaderTop">
+                <button onclick="Show_Hide(false)" class="Drop">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512">
+                        <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                            stroke-width="32" d="M368 368L144 144M368 144L144 368" />
+                    </svg>
+                </button>
+                <a class="SideuserPfp" href="perfil.html">
+                    <div class="SideuserPfp">
+                        <img src="" id="UserPicture">
+                    </div>
+                </a>
+            </div>
+            <ul class="DropDw">
+                <li>
+                    <a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Filmes')"
+                        data-Storager="Filmes">Filmes</a>
+                </li>
+                <li>
+                    <a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Series')"
+                        data-Storager="Series">Series</a>
+                </li>
+                <li>
+                    <a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Animes')"
+                        data-Storager="Animes">Animes</a>
+                </li>
+                <li>
+                    <a class="ItemNav" href="Conteudo.html" onclick="GotoConteudo('Mangas')"
+                        data-Storager="Mangas">Mangas</a>
+                </li>
+                <li>
+                    <a class="ItemNav" href="#Pesquisa.html">Main Filmes</a>
+                </li>
+                <li>
+                    <a class="ItemNav" href="Registrar.html">Registrar Nova midia</a>
+                </li>
+            </ul>
+    
+        </div>
 
         <div class="Recenter">
             <p id="TituloRecente">Assistir Filmes Online - Recomendados</p>
@@ -88,6 +137,7 @@
 
     </main>
 
+    <script src="../js/SideHeader.js"></script>
     <script src="../js/perfil.js"></script>
     <script src="../js/Conteudo.js"></script>
     <script src="../js/Pesquisa.js"></script>

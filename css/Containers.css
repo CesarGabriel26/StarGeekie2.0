@@ -68,8 +68,11 @@
 /*! posteres/ cards*/
 
 .Poster {
-    min-width: 12.4vw;
-    min-height: 18.5vw;
+    max-height: 270px;
+    max-width: 170px;
+
+    min-height: 270px;
+    min-width: 170px;
 
     position: relative;
     display: inline-block;

@@ -23,11 +23,12 @@ const Reset = `
 
 function GotoConteudo(data) {
     localStorage.setItem('currentStorage', data)
+    Show_Hide(false)
 }
 
 function GoToMidia(name) {
-    localStorage.setItem('filmeClicado', name),
-        window.location.href = "MidiaPage.html"
+    localStorage.setItem('filmeClicado', name)
+    window.location.href = "MidiaPage.html"
 }
 
 ItemNav.forEach(item => {
@@ -40,6 +41,22 @@ ItemNav.forEach(item => {
 })
 
 document.title = `Star Geekie - ${localStorage.getItem('currentStorage')}`
+const MidiaCard = (item) => `
+    <a onclick="GoToMidia('${item.Nome}')" title="Asistir: ${item.Nome}" class="Poster" id="Poster" href="#">
+        <img src="${item.Link}" class="img" width="170" height="270" alt="Poster ${item.Nome}" loading="lazy"
+            decoding="async">
+        <div class="grad"></div>
+        <div class="infos">
+            <p>${item.Nome}</p>
+            <div class="b">
+                <div class="y">${item.Ano}</div>
+                <div class="r">${item.Pontuação}</div>
+                <div class="t">${item.duracaoH}h, ${item.duracaoM}min</div>
+            </div>
+        </div>
+    </a>
+`
+
 LoadList(localStorage.getItem('currentStorage'))
 Recomendar(localStorage.getItem('currentStorage'))
 
@@ -52,24 +69,10 @@ function LoadList(Data) {
     Container_All.innerHTML = ""
 
     if (list && list != "" && list != null) {
-        list.forEach((item, i) => {
+        list.forEach(item => {
 
-            var html = `
-                <a onmouseenter="Hover(${i},'Normal')" onmouseleave="NoHover(${i}, 'Normal')" onclick="GoToMidia('${item.Nome}')" title="Asistir: ${item.Nome}" class="Poster" id="Poster" href="#">
-                    <img src="${item.Link}" class="img" width="170" height="270" alt="Poster ${item.Nome}" loading="lazy"
-                        decoding="async">
-                    <div class="grad"></div>
-                    <div class="infos">
-                        <p>${item.Nome}</p>
-                        <div class="b">
-                            <div class="y">${item.Ano}</div>
-                            <div class="r">${item.Pontuação}</div>
-                            <div class="t">${item.duracaoH}h, ${item.duracaoM}min</div>
-                        </div>
-                    </div>
-                </a>
-            `
-            Container_All.innerHTML += html
+
+            Container_All.innerHTML += MidiaCard(item)
         })
     } else {
         Container_All.innerHTML = Reset
@@ -78,46 +81,33 @@ function LoadList(Data) {
 
 }
 
+
 function Recomendar(Data) {
     var Array = JSON.parse(localStorage.getItem(Data))
 
+    var indexes = []
+
     if (Array && Array != "" && Array != null) {
-        for (let i = 0; i < 5; i++) {
+        for (let index = 0; index < 5; index++) {
             var Index = parseInt(Math.random() * Array.length)
             const item = Array[Index];
 
-            var html = `
-                <a onclick="GoToMidia('${item.Nome}')" title="Asistir: ${item.Nome} recomendado" class="Poster" id="Poster" href="#">
-                    <img src="${item.Link}" class="img" width="170" height="270" alt="Poster ${item.Nome}" loading="lazy"
-                        decoding="async">
-                    <div class="grad"></div>
-                    <div class="infos">
-                        <p>${item.Nome}</p>
-                        <div class="b">
-                            <div class="y">${item.Ano}</div>
-                            <div class="r">${item.Pontuação}</div>
-                            <div class="t">${item.duracaoH}h, ${item.duracaoM}min</div>
-                        </div>
-                    </div>
-                </a>
-            `
-
-            var Poster = document.querySelectorAll('#container_recomendados #Poster')
-            if (Poster.length >0) {
-                Poster.forEach(post => {
-                    var title = post.getElementsByTagName('p')[0].innerHTML
-                    
-                    if (item.Nome != title) {
-                        console.log(item.Nome);
-                        container_recomendados.innerHTML += html
-                    }
-                })
-            }else {
-                container_recomendados.innerHTML += html
+            if (indexes.length > 0 && indexes.indexOf(Index) == -1) {
+                container_recomendados.innerHTML += MidiaCard(item)
+                indexes.push(Index)
+            } else if (indexes.length == 0) {
+                container_recomendados.innerHTML += MidiaCard(item)
+                indexes.push(Index)
             }
         }
     } else {
         container_recomendados.innerHTML = Reset
     }
 }
+
+var a = JSON.parse(localStorage.getItem('Filmes'))
+var b = JSON.parse(localStorage.getItem('Animes'))
+
+console.log(a);
+console.log(b);
 

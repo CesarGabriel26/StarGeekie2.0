@@ -20,23 +20,25 @@ main {
 .right .Icon:hover {
     color: var(--Sec);
 }
-
+.SideuserPfp,
 .userPfp {
+    display: block;
     width: 80px;
     height: 80px;
     border-radius: 50%;
     overflow: hidden;  
 }
+.SideuserPfp img,
 .userPfp img {
     height: 80px;
     width: 80px;
 }
 
-.userPfp.Big {
+.userPfpBig {
     height: 200px;
     width: fit-content;
 }
-.userPfp.Big img{
+.userPfpBig img{
     height: 200px;
     width: 200px;
 }
@@ -52,11 +54,10 @@ main {
 .top .left{
     display: flex;
     align-items: center;
-
-
 }
 .top .left h1 { margin-left: 30px; font-size: 60px;}
 
+.LogoutBTN,
 .top button {
     background: var(--Log_Out);
     border: none;
@@ -71,9 +72,12 @@ main {
     transition: .5s;
     cursor: pointer;
 }
+.LogoutBTN:hover,
 .top button:hover {
     background: var(--Log_Out_hover);
 }
+
+.LogoutBTN {margin-left: 25%; margin-top: 20px;}
 
 .top .left #Edit {
     margin-left: 20px;

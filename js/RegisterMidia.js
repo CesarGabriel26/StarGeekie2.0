@@ -117,7 +117,6 @@ Registrar.addEventListener('click',()=>{
             duracaoH : duracaoH,
             duracaoM : duracaoM,
             Descricao : Descricao,
-            gif: LinkGif
         }
         array_.push(Conteudo)
         localStorage.setItem(Storage,JSON.stringify(array_))/**/
@@ -137,18 +136,4 @@ function ChecarVasio(Nome,Link) {
     return true
 }
 
-function Hover_Demo() {
-    let Poster = document.getElementById('Poster')
-
-    var img = Poster.getElementsByTagName('img')[0]
-
-    img.src = LinkGifInp.value
-
-}
-function NoHover_Demo() {
-    let Poster = document.getElementById('Poster')
-    var img = Poster.getElementsByTagName('img')[0]
-
-    img.src = LinkINP.value
-}
 
